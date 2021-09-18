@@ -1,0 +1,337 @@
+body{
+    overflow: hidden;
+}
+
+.roomSelectorContainer{
+    width:auto;
+    padding: 5%;
+    padding-top: 2%;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #e0d4ff;
+    border: 4px solid #581bff;
+    border-radius: 2vh;
+    display: none;
+}
+
+.roomSelectorTitle{
+    color: #581bff;
+    font-size: 8vh;
+}
+
+.roomSelector{
+    height: 8vh;
+    width: 50vh;
+    font-size: 2.5vh;
+    border: 0px;
+    border-radius: 1vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #875bff;
+    color: white;
+    margin-top: 5vh;
+}
+
+.roomSelector::placeholder { 
+    color: white;
+    opacity: 1;
+  }
+
+.roomSelectorButton{
+    margin: auto;
+    height: 8vh;
+    width: 35vh;
+    background-color: #581bff;
+    color: white;
+    border: 0px;
+    border-radius: 1vh;
+    margin-top: 1vh;
+    font-size: 2.5vh;
+}
+
+.roomSelectorButton:hover, .roomJoinButton:hover{
+    font-size: 2.6vh;
+    cursor: pointer;
+    background-color: #875bff;
+}
+
+.roomJoinButton{
+    margin: auto;
+    height: 8vh;
+    width: 35vh;
+    background-color: #581bff;
+    color: white;
+    border: 0px;
+    border-radius: 1vh;
+    margin-top: 5vh;
+    font-size: 2.5vh;
+}
+
+.userNotAllowedToRoom,.userBanned, .roomCreatorError{
+    width: 50vh;
+    color: red;
+    margin-top: 2vh;
+    text-align: center;
+    opacity: 0;
+}
+
+.administrateRooms{
+    
+    width: auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    height: 90vh;
+}
+
+.myRoomsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    margin: auto;
+    height: 50vh;
+    background: #cab7ff;
+    padding: 5%;
+    padding-top: 2%;
+    border-radius: 2vh;
+    border: 4px solid #581bff;
+    overflow-y: auto;
+}
+
+.myRoom{
+    display: flex;
+    width: 100%;
+    background: #e0d4ff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    border: 2px solid #581bff;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+
+.buttonMyRoom{
+    margin-left: 5%;
+    background:#581bff;
+    color: white;
+    font-size: 2.5vh;
+    width: 15vh;
+    border: 0px;
+    height: 6vh;
+    border-radius: 1vh;
+}
+
+.buttonMyRoom:hover{
+    cursor: pointer;
+    background-color: #875bff;
+    font-size: 2.8vh;
+}
+
+.buttonsMyRoom{
+    display: flex;
+}
+
+.myRoomTitle{
+    color:#581bff;
+    font-size: 3vh;
+}
+
+.buttonNewRoom{
+    background:#581bff;
+    color: white;
+    font-size: 3vh;
+    width: 20vh;
+    border: 0px;
+    height: 8vh;
+    border-radius: 1vh;
+    margin-inline: 2vh;
+}
+
+.buttonNewRoom:hover{
+    cursor: pointer;
+    background-color: #875bff;
+    font-size: 3.2vh;
+}
+
+.buttonsContainer{
+    margin-top: 5vh;
+    display: flex;
+}
+
+.roomOptions{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.roomOptionsTitle{
+    color:#581bff;
+    font-size: 8vh;
+    text-align: center;
+    margin-top: 4vh;
+    margin-bottom: 2vh;;
+}
+
+.roomOptionsContainer{
+    display: flex;
+    height: 70%;
+    width: 80%;
+    margin:auto;
+}
+
+.roomOptionsButton{
+    background:#581bff;
+    color: white;
+    font-size: 3vh;
+    width: 20vh;
+    border: 0px;
+    height: 8vh;
+    border-radius: 1vh;
+}
+.roomOptionsButton:hover{
+    cursor: pointer;
+    background-color: #875bff;
+    font-size: 3.2vh;
+}
+
+.usersAllowedContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.allowedUsersTitle{
+    color:#581bff;
+    font-size: 4vh;
+}
+
+.addNewUserContainer{
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.newUserButton{
+    margin-left: 5%;
+    border:0px;
+    width: 12vh;
+    height: 8vh;
+    font-size: 2.5vh;
+    background: #581bff;
+    color: white;
+    border-radius: 1vh;
+}
+
+.newUserButton:hover{
+    cursor: pointer;
+    background-color: #875bff;
+    font-size: 2.8vh;
+}
+
+.newUserInput{
+    height: 8vh;
+    width: 50vh;
+    font-size: 2.5vh;
+    border: 0px;
+    border-radius: 1vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #875bff;
+    color: white;
+}
+
+.newUserInput::placeholder{
+    color: white;
+    opacity: 1;
+}
+
+.addedUsersContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 60%;
+    border-radius: 2vh;
+    background: #e0d4ff;
+    border: 4px solid #581bff;
+    margin-top: 5%;
+    overflow-y: auto;
+}
+
+.addedUser{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #875bff;;
+    border-radius: 2vh;
+    margin-top: 2vh;
+    width: 88%;
+    height: 5vh;
+    padding: 2vh;
+    border: 2px solid #581bff;
+}
+
+.addedUserEmail{
+    color: white;
+    font-size: 2.5vh;
+}
+
+.removeUserFromRoom{
+    height: 5vh;
+    padding: 2%;
+    border-radius: 1vh;
+    border:0;
+    background: #581bff;
+    color: white;
+}
+
+.removeUserFromRoom:hover{
+    cursor: pointer;
+    color: #581bff;
+    background: white;
+}
+
+.optionsContainerMenu{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.roomOtionsInput{
+    height: 8vh;
+    width: 50vh;
+    font-size: 2.5vh;
+    border: 0px;
+    border-radius: 1vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #875bff;
+    color: white;
+    margin-top: 5vh;
+}
+
+.roomOtionsInput::placeholder{
+    color: white;
+    opacity: 1;
+}
+
+.checkBoxRoomOptions{
+    font-size: 3vh;
+    color:#581bff;
+}
+
+.checkBoxRoomContainer{
+    margin-top: 10%;
+}

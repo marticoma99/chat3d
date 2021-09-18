@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <title>WE CHAT</title>
+    <meta charset="UTF-8" />
+    <link href="style.css" rel="stylesheet"/>
+    <link href="styleMenu.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <div id=log_container>
+        <h1 class="titleWelcome">Welcome!</h1>
+        <div id="log_selection">
+            <button id="sign_in" class="button-login">Login</button>
+            <button id="sign_up" class="button-login">Sign up</button>
+        </div>
+        <div id=log>
+            <input type="text" placeholder="User Name" class="input-login" id="userNameInput" />
+            <input type="text" placeholder="Your email" class="input-login" id="emailInput" />
+            <input type="password" placeholder="Password" class="input-login" id="passwordInput" />
+            <h3 id="userError">Wrong password or account.</h3>
+            <button id="continue" class="button-login">Continue</button>
+        </div>
+        <div id="config">
+            <div id="select_ch"> 
+                <button id="nextButton" class="arrowButton"><img src="icons/arrow_right.png" class="iconOptions" /></button>
+                <canvas id="character_select" width="300" height="512">
+                </canvas><button id="prevButton" class="arrowButton"><img src="icons/arrow_left.png" class="iconOptions" /></button>
+                <button id="continue_config" class="button-login">Continue</button>
+            </div>
+        </div>
+    </div>
+    <div class="roomSelectorContainer">
+        <h1 class="roomSelectorTitle">Enter room</h1>
+        <input placeholder="Room name" class="roomSelector" id="roomJoinName"></input>
+        <button class="roomJoinButton" id="joinRoomButton">Join Room</button>
+        <h3 class="userNotAllowedToRoom">Wrong room name or user not allowed.</h3>
+        <button class="roomSelectorButton" id="adminRoomButton">Administrate rooms</button>
+        <button class="roomSelectorButton" id="closeSessionButton">Close session</button>
+    </div>
+
+    <div class="administrateRooms">
+        <h1 class="roomSelectorTitle">My rooms</h1>
+        <div class="myRoomsContainer"></div>
+        <div class="buttonsContainer">
+            <button class="buttonNewRoom" id="roomOptionsButton">New Room</button>
+            <button class="buttonNewRoom" id="homeFromAdmin">Home</button>
+        </div>
+    </div>
+
+    <div class="roomOptions">
+        <h1 class="roomOptionsTitle">Room Options</h1>
+        <div class="roomOptionsContainer">
+            <div class="usersAllowedContainer">
+                <h2 class="allowedUsersTitle">Allowed Users</h2>
+                <div class="addNewUserContainer">
+                    <input placeholder="Email" class="newUserInput" />
+                    <button class="newUserButton">Add</button>
+                </div>
+                <div class="addedUsersContainer"></div>
+            </div>
+            <div class="optionsContainerMenu">
+                <input placeholder="Room Name" class="roomOtionsInput" id="newRoomName" />
+                <input placeholder="Max students" class="roomOtionsInput" id="maxStudents" />
+                <div class="checkBoxRoomContainer">
+                    <input type="checkbox" name="isPublic" id="isPublicCheckbox"/>
+                    <label for="isPublic" class="checkBoxRoomOptions"> Is public</label>
+                </div>
+                <div class="buttonsContainer">
+                    <button class="roomOptionsButton" id="createRoomButton">Save</button>
+                    <button class="buttonNewRoom" id="homeFromNewRoom">Home</button>
+                </div>
+                <h3 class="roomCreatorError">This room name already exists, please put another name</h3>
+            </div>
+        </div>
+    </div>
+    <div id="application" class="applicationFullScreen">
+        <div id="scene"><canvas id="main_canvas"></canvas></div>
+        <button class="openMenu"><img src="icons/options.png" class="iconOptions" /></button>
+        <button class="closeMenu"><img src="icons/options.png" class="iconOptions" /></button>
+        <button class="homeButton">Home</button>
+        <button class="standButton">Stand Up</button>
+        <button class="blackboardButton">Paint</button>
+        <div class="optionsContainer">
+            <div class="optionSelected">
+                <div class="chatZone" id="chatZone">
+                    <div class="chat">
+                        <div class="chatMessages" id="allMsg"></div>
+                    </div>
+                    <div class="inputMSG">
+                        <div class="inputMSGText">
+                            <input placeholder="Write a message" id="textMessage" class="input-chat" />
+                            <button id="sendButton" class="button-chat">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="confuguration" id="confugurationZone">
+                    <div class="optionsConfiguration">
+                        <!--<div class="checkboxContainer">
+                            <input type="checkbox" name="chatMessages" id="allowMSGs">
+                            <label for="chatMessages" class="checkboxText">Allow chat messages</label>
+                        </div>-->
+                        <div class="checkboxContainer">
+                            <input type="checkbox" name="blackboardAllow" id="allowBB">
+                            <label for="blackboardAllow" class="checkboxText">Allow blackboard</label>
+                        </div>
+                    </div>
+                    <div class="petitionsContainer">
+                        <h1 class="enterPetitions">Enter petitions</h1></div>
+                </div>
+                <div class="people" id="peopleZone">
+                    <h1 class="peopleTitle">People connected</h1></div>
+            </div>
+            <div id='optionsPanel'>
+                <button class="optionsButtons" id="buttonConfig"><img src="icons/confW.png"
+                        class="iconsPanel" /></button>
+                <button class="optionsButtons" id="buttonChat"><img src="icons/chatW.png" class="iconsPanel" /></button>
+                <button class="optionsButtons" id="buttonPeople"><img src="icons/peopleW.png"
+                        class="iconsPanel" /></button>
+            </div>
+        </div>
+    </div>
+    <div class="paint_app">
+        <div id="tools_zone">
+            <h1 id="black_title">Blackboard</h1>
+            <div class="type">
+                <input type="radio" name="tool-type" id="tool-pencil" checked>
+                <label for="tool-pencil"><i>Pen</i></label>
+                <input type="radio" name="tool-type" id="tool-fill">
+                <label for="tool-fill"><i>Fill</i></label>
+            </div>
+            <div class="size">
+                <label for="pen_size"><i>Size</i></label>
+                <input type="range" id="pen_size" min="1" max="44">
+            </div>
+            <div class="color">
+                <label for="pen_color">Color</label>
+                <input type="color" id="pen_color">
+            </div>
+            <div class="actions">
+                <button id="reset">Reset</button><button id="closePaint">Close</button>
+            </div>
+
+        </div>
+        <div id="PaintZone">
+            <canvas id="paint_canvas" width="1024" height="512"></canvas>
+        </div>
+    </div>
+    <script src="libraries/gl-matrix.js"></script>
+    <script src="libraries/litegl.js"></script>
+    <script src="libraries/rendeer.js"></script>
+    <script src="libraries/rendeer-animation.js"></script>
+    <script src="libraries/wbin.js"></script>
+    <script src="libraries/walkArea.js"></script>
+
+    <script src="src/html_init.js"></script>
+    <script src="src/core.js"></script>
+    <script src="src/server_handler.js"></script>
+    <script src="src/log_in.js"></script>
+    <script src="src/character.js"></script>
+    <script src="src/chat.js"></script>
+    <script src="src/paint_bb.js"></script>
+    <script src="src/room.js"></script>
+    <script src="src/myapp.js"></script>
+    <script src="src/interfaceCreator.js"></script>
+    <script src="src/roomCreator.js"></script>
+    <script src="src/interface.js"></script>
+    <script src="src/scpriptsInit.js"></script>
+</body>
+
+</html>
